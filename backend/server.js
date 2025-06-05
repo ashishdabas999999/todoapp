@@ -10,7 +10,7 @@ import forgotPasswordRouter from "./routes/forgotPassword.js"
 //app config
 dotenv.config()
 const app = express()
-const port = process.env.PORT || 8001
+const port =  4000
 mongoose.set('strictQuery', true);
 
 //middlewares
@@ -34,4 +34,4 @@ app.use("/api/task", taskRouter)
 app.use("/api/forgotPassword", forgotPasswordRouter)
 
 //listen
-app.listen(port, () => console.log(`Listening on localhost:${port}`))
+app.listen(port, () => console.log(`Listening on localhost 4000`))
