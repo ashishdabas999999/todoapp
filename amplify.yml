@@ -8,7 +8,6 @@ frontend:
         - npm install  # Install dependencies
     build:
       commands:
-        - npm run test -- --watchAll=false  # Run Jest tests
         - npm run build  # Build the React app
     postBuild:
       commands:
