@@ -1,0 +1,30 @@
+version: 1
+
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd frontend  # Move into the frontend directory
+        - npm install  # Install dependencies
+    build:
+      commands:
+        - npm run test -- --watchAll=false  # Run Jest tests
+        - npm run build  # Build the React app
+    postBuild:
+      commands:
+        - echo "Deployment successful!"  # Custom deployment message
+        - npm cache clean --force  # Clear npm cache after build
+
+  artifacts:
+    baseDirectory: frontend/build  # Specify the build directory
+    files:
+      - "**/*"  # Include all build files
+
+  cache:
+    paths:
+      - frontend/node_modules/***  # Cache dependencies for faster builds
+
+environment:
+  variables:
+    NODE_ENV: production  # Set production environment
+    REACT_APP_API_URL: "https://api.yourdomain.com"  # Inject API endpoint dynamically
