@@ -1,4 +1,4 @@
-pipline{
+pipeline{
     agent any
     stages{
         stage('pull git code'){
@@ -32,3 +32,4 @@ pipline{
         }
     }
 }
+
