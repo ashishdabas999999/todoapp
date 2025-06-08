@@ -6,11 +6,11 @@ pipeline{
                 git branch: 'main', url:'https://github.com/ashishdabas999999/todoapp'
             }
         }
-        stage('build'){
-            steps{
-                echo 'building prject'       
-            }
-        }  
+        // stage('build'){
+        //     steps{
+        //         echo 'building prject'       
+        //     }
+        // }  
         stage('test'){
             steps{
                 script{
